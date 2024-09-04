@@ -5,6 +5,8 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const PORT=process.env.PORT||4500
+
 
 const app = express();
 app.use(cors()); // To allow requests from your React frontend
@@ -274,6 +276,6 @@ app.post('/apiwa/logout', async (req, res) => {
   });
   
 
-app.listen( () => {
+app.listen(PORT, () => {
   console.log('Server running on port 3001');
 });
